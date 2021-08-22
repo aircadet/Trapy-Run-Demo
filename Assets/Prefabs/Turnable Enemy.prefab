@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _minSpeed: 3.5
-  _maxSpeed: 4.5
+  _maxSpeed: 5.5
   _dir: {x: 0, y: 0, z: 1}
   _jumpHolder: {fileID: 0}
 --- !u!65 &-5730095530096341979

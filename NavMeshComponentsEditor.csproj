@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7F565172-829F-F60B-C77E-B4F00926855A}</ProjectGuid>
+    <ProjectGuid>{9878348B-B833-03BA-072F-9EC9C7D673B4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>NavMeshComponentsEditor</AssemblyName>
@@ -66,16 +66,16 @@
      <Compile Include="Assets\NavMeshComponents\Editor\NavMeshSurfaceEditor.cs" />
      <None Include="Assets\NavMeshComponents\Editor\NavMeshComponentsEditor.asmdef" />
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy Run/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy-Run-Demo/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy Run/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy-Run-Demo/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.TestRunner">
- <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy Run/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy-Run-Demo/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy Run/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy-Run-Demo/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -267,13 +267,13 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy Run/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+ <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy-Run-Demo/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="DOTweenEditor">
- <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy Run/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy-Run-Demo/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy Run/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/Users/Mertcan/Documents/GitHub/Trapy-Run-Demo/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.17f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -632,7 +632,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="NavMeshComponents.csproj">
-      <Project>{027645D0-950D-1F54-B383-60E4A0115FDF}</Project>
+      <Project>{2CAC0C40-D361-A795-3047-0BABE8B7D1B2}</Project>
       <Name>NavMeshComponents</Name>
     </ProjectReference>
   </ItemGroup>
