@@ -11,6 +11,11 @@ TagManager:
   - Turn Left
   - Confetti
   - Helicopter Point
+  - Turnable Enemy
+  - Fallen Player
+  - Fallen Enemy
+  - AI Enemy
+  - Way
   layers:
   - Default
   - TransparentFX

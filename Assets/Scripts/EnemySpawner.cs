@@ -18,15 +18,21 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int _spawnCount;
     [SerializeField] private float _spawnDistance;
 
-    private bool isSpawned = false;
-
     [Header("Following Settings")] 
     [SerializeField] private bool _follow;
     [SerializeField] private Transform _target;
     [SerializeField] private float _followDistance = 4;
 
-
+    
+    private bool isSpawned = false;
+    private GameObject player;
     private bool wait =false;
+
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
+
     private void Update()
     {
         // FOLLOW 
@@ -34,15 +40,10 @@ public class EnemySpawner : MonoBehaviour
         {
             Follow();
         }
-
-        if (GameManager.instance.playerState == GameManager.PlayerState.Playing && !wait && _infinitySpawn)
-        {
-            StartCoroutine(SpawnEnemyInfinity(_waitForSpawn));
-        }
         
         // SPAWN FOR COUNT
 
-        if (!_infinitySpawn && _spawnCount > 0 && !isSpawned && Vector3.Distance(transform.position,GameObject.Find("Player").transform.position) < _spawnDistance)
+        if (!_infinitySpawn && _spawnCount > 0 && !isSpawned && Vector3.Distance(transform.position,player.transform.position) < _spawnDistance)
         {
             if (GameManager.instance.playerState == GameManager.PlayerState.Playing)
             {
@@ -68,19 +69,19 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    // FOR INFINITY SPAWN
-    IEnumerator SpawnEnemyInfinity(float time)
-    {
-        wait = true;
-
-        for (int i = 0; i < 3; i++)
-        {
-            Vector3 pos = new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y, transform.position.z);
-            Instantiate(_basicEnemy, pos, Quaternion.identity, _enemyHolder);
-        }
-
-        yield return new WaitForSeconds(time);
-        wait = false;
-
-    }
+    // // FOR INFINITY SPAWN
+    // IEnumerator SpawnEnemyInfinity(float time)
+    // {
+    //     wait = true;
+    //
+    //     for (int i = 0; i < 3; i++)
+    //     {
+    //         Vector3 pos = new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y, transform.position.z);
+    //         Instantiate(_basicEnemy, pos, Quaternion.identity, _enemyHolder);
+    //     }
+    //
+    //     yield return new WaitForSeconds(time);
+    //     wait = false;
+    //
+    // }
 }

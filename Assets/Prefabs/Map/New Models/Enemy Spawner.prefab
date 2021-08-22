@@ -51,6 +51,7 @@ MonoBehaviour:
   _waitForSpawn: 5
   _infinitySpawn: 1
   _spawnCount: 0
+  _spawnDistance: 0
   _follow: 1
   _target: {fileID: 0}
   _followDistance: 4

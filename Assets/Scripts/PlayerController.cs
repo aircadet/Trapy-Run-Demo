@@ -77,44 +77,60 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.transform.CompareTag("Ground"))
-        {
-            BreakCube(other.gameObject.transform.GetChild(1).gameObject, other.gameObject);
-        }
-        else if (other.transform.CompareTag("Finish"))
-        {
-            ParticleSystem confetti = GameObject.FindWithTag("Confetti").gameObject.GetComponent<ParticleSystem>();
-            confetti.Play();
-            GameManager.instance.playerState = GameManager.PlayerState.Finish;
-            MoveToHelicopter(other.transform);
 
-        }
-        else if (other.transform.CompareTag("Enemy"))
-        {
-            // DEATH
-            GetComponent<Animator>().SetInteger("Death", 1);
-            GameManager.instance.playerState = GameManager.PlayerState.Fail;
-        }
-        else if (other.transform.CompareTag("Obstacle"))
-        {
-            AddForce(other.transform.position);
-        }
-    }
-
-    void BreakCube(GameObject cubeOut, GameObject cubeParent)
-    {
         if (GameManager.instance.playerState == GameManager.PlayerState.Playing)
         {
-            Sequence seq = DOTween.Sequence();
-            seq.Append(cubeOut.GetComponent<MeshRenderer>().material.DOColor(Color.red, .25f))
-                .Append(
-                    cubeParent.transform.DOMove(cubeParent.gameObject.transform.position - new Vector3(0, 10, 0), 1));
+            if (other.transform.CompareTag("Finish"))
+            {
+                ParticleSystem confetti = GameObject.FindWithTag("Confetti").gameObject.GetComponent<ParticleSystem>();
+                confetti.Play();
+                GameManager.instance.playerState = GameManager.PlayerState.Finish;
+                MoveToHelicopter(other.transform);
 
-            Destroy(cubeParent, 1.8f);
+            }
+            else if (other.transform.CompareTag("Enemy") || other.transform.CompareTag("Turnable Enemy"))
+            {
+                // DEATH
+                transform.tag = "Fallen Player";
+                Destroy(GetComponent<Rigidbody>());
+
+                GetComponent<Animator>().SetInteger("Death", 1);
+                GameManager.instance.playerState = GameManager.PlayerState.Fail;
+            }
+            else if (other.transform.CompareTag("Ground"))
+            {
+                ChangeColorSmoothly(other.gameObject.transform.GetChild(1).gameObject);
+            }
+            else if (other.transform.CompareTag("Obstacle"))
+            {
+                AddForce(other.transform.position);
+            }
         }
-
     }
 
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.transform.CompareTag("Ground"))
+        {
+            BreakCube(other.gameObject);
+        }
+        
+        
+    }
+
+    void BreakCube(GameObject cube)
+    {
+        cube.AddComponent<Rigidbody>();
+        cube.transform.localScale = new Vector3(.96f, .96f, .96f);
+        
+        Destroy(cube,2);
+    }
+
+    void ChangeColorSmoothly(GameObject cube)
+    {
+        cube.GetComponent<MeshRenderer>().material.DOColor(Color.red, 1.5f);
+    }
+    
     void AddForce(Vector3 hittedObj)
     {
         Vector3 direction = transform.position - hittedObj;

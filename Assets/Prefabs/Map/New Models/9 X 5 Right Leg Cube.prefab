@@ -23901,7 +23901,7 @@ PrefabInstance:
     - target: {fileID: 2369758382814571315, guid: 4ba868ec90811c844882502722529e64,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.95
+      value: 7.07
       objectReference: {fileID: 0}
     - target: {fileID: 2369758382814571315, guid: 4ba868ec90811c844882502722529e64,
         type: 3}
@@ -24135,8 +24135,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7921300391934131313, guid: ace99e0cfaad6444c8d3fbb6660ff95c,
         type: 3}
+      propertyPath: _basicEnemy
+      value: 
+      objectReference: {fileID: 3261727670386673478, guid: c540c7d993a98a54f8f4c2e198398009,
+        type: 3}
+    - target: {fileID: 7921300391934131313, guid: ace99e0cfaad6444c8d3fbb6660ff95c,
+        type: 3}
       propertyPath: _spawnCount
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7921300391934131313, guid: ace99e0cfaad6444c8d3fbb6660ff95c,
         type: 3}
@@ -24146,7 +24152,7 @@ PrefabInstance:
     - target: {fileID: 7921300391934131313, guid: ace99e0cfaad6444c8d3fbb6660ff95c,
         type: 3}
       propertyPath: _spawnDistance
-      value: 22
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7921300391934131313, guid: ace99e0cfaad6444c8d3fbb6660ff95c,
         type: 3}
